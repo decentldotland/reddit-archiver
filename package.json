@@ -1,0 +1,28 @@
+{
+  "name": "reddit-archiver",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "archiving Reddit feeds about Ukrainian-Russian conflict on Arweave",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "archive": "node ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decentldotland/reddit-archiver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/decentldotland/reddit-archiver/issues"
+  },
+  "homepage": "https://github.com/decentldotland/reddit-archiver#readme",
+  "keywords": ["reddit", "russia", "ukrain", "arweave", "archive"],
+  "author": "charmful0x",
+  "license": "MIT",
+  "dependencies": {
+    "arweave": "^1.10.23",
+    "axios": "^0.26.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
