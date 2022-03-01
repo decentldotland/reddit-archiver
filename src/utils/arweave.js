@@ -21,7 +21,7 @@ export async function archive(topics, type) {
       if (!jwk) {
         jwk = JSON.parse(process.env.JWK);
       }
-      const data = await fetchFeed(topics);
+      const data = await fetchFeed(topics, type);
 
       for (const post of data) {
         let toArchive;
