@@ -1,6 +1,6 @@
 {
   "name": "reddit-archiver",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "archiving Reddit feeds about Ukrainian-Russian conflict on Arweave",
   "main": "./src/app.js",
