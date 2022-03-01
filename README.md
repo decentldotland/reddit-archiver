@@ -30,7 +30,8 @@ Head to the repo's directory and run in shell:
 ```sh
 npm run archive
 ```
-
+#### Note
+Archiving under `"METADATA"` format (`application/json`) is ~10x lower than `"PRTSCR"` (`image/png`)
 ### Future usage
 The server is customisable to archive about any topic declared in `QUERY_TOPICS`
 
