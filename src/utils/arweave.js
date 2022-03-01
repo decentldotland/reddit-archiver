@@ -1,5 +1,6 @@
 import Arweave from "arweave";
 import { fetchFeed } from "./reddit.js";
+import { prtScr } from "./url2img.js";
 import dotenv from "dotenv";
 dotenv.config();
 
