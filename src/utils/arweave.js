@@ -13,7 +13,7 @@ export const arweave = Arweave.init({
   logging: false,
 });
 
-export async function archive(topics) {
+export async function archive(topics, type) {
   try {
     let i = 0;
 
@@ -21,13 +21,23 @@ export async function archive(topics) {
         jwk = JSON.parse(process.env.JWK);
       }
       const data = await fetchFeed(topics);
-      console.log(data.length)
 
       for (const post of data) {
+        let toArchive;
+
         const body = JSON.stringify(post.child);
         const tags = post.tags;
 
-        const tx = await arweave.createTransaction({ data: body }, jwk);
+        if (type === "PRTSCR") {
+          const url = `https://reddit.com${tags.permalink}`;
+          const imgBuffer = await(prtScr(url));
+
+          toArchive = imgBuffer;
+        } else {
+          toArchive = body
+        }
+        
+        const tx = await arweave.createTransaction({ data: toArchive }, jwk);
         tx.reward = (+tx.reward * 1.5).toString();
 
         for (let name in tags) {
