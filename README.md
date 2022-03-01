@@ -15,18 +15,21 @@ In order to participate with the efforts of the communities of Arweave network i
 create a `.env` file with the following key-value pairs:
 - JWK : your wallet's keyfile
 - QUERY_TOPICS (optional) : topic's keywords separated by commas (`russia,ukrain,war`)
-- PORT (optional) : default port
+- ARCHIVING_FORMAT (optional): PRTSCR (screenshots) or METADATA (JSON). Default format is `METADATA`
 
-By omitting `2nd` & `3rd` pairs, the server will switch to the default pre-declared values. Omitting `1st` requires hardcoding the parsedstring value of your `jwk` in `./src/utils/arweave.js` (not recommended).
+By omitting `2nd` & `3rd` key-value pairs, the server will switch to the default pre-declared values. Omitting `1st` requires hardcoding the parsed string value of your `jwk` in `./src/utils/arweave.js` (not recommended).
+
+Archiving screenshots make use of `puppeteer`  that installs a new Chromium
+
+From Puppeteer's [repository](https://github.com/puppeteer/puppeteer#readme):
+> When you install Puppeteer, it downloads a recent version of Chromium (170MB Mac, 282MB Linux, 280MB Win) that is guaranteed to work with the API
 
 ### Running it
-In shell:
+Head to the repo's directory and run in shell:
 
 ```sh
 npm run archive
 ```
-
-then in browser: `http://localhost:{PORT}/archive`
 
 ### Future usage
 The server is customisable to archive about any topic declared in `QUERY_TOPICS`
