@@ -39,5 +39,12 @@ The server is customisable to archive about any topic declared in `QUERY_TOPICS`
 > currently we maintain an archiving instance
 > under [rRX4BQtmVuqnOtixO6BFZc1iCNbAdseFM5PXQTfS_hI](https://viewblock.io/arweave/address/rRX4BQtmVuqnOtixO6BFZc1iCNbAdseFM5PXQTfS_hI)
 
+## Archived Data Retrieval
+Reddit posts archived via this code can be retrieve via graphQL by querying the protocol's specific tags:
+
+- `App-Name` : `reddit-archiver`
+- `Content-Type`: `application/json` || `image/png`
+- `archive-type`: `1` || `2`
+
 ## License
 This project is licensed under the [MIT](./LICENSE) license.
