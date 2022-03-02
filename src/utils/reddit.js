@@ -25,7 +25,7 @@ export async function fetchFeed(topics, type) {
       for (const post of childs) {
         const child = post.data;
         const tags = {
-          "App-Name": "reddit-archiver-test",
+          "App-Name": "reddit-archiver",
           "archive-type": ArchiveType,
           "archiver-topic": topic,
           subdreddit: child.subreddit,
