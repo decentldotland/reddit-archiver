@@ -21,13 +21,17 @@ function sleep(ms) {
 }
 
 async function polling(topics, type) {
-  while (true) {
-    console.log(topics, type);
-    await archive(topics, type);
-    // in ms
-    const sleep_time = 60 * 60 * 1000;
-    console.log(`sleeping for ${sleep_time} ms`);
-    await sleep(sleep_time);
+  try {
+    while (true) {
+      console.log(topics, type);
+      await archive(topics, type);
+      // in ms
+      const sleep_time = 60 * 60 * 1000;
+      console.log(`sleeping for ${sleep_time} ms`);
+      await sleep(sleep_time);
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
